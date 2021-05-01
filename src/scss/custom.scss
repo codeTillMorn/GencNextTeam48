@@ -1,0 +1,14 @@
+
+$theme-colors: (
+    "primary": #000000,
+    "secondary": #ff0000
+);
+
+$primary : red ;
+$secondary: rgb(30, 255, 0);
+$background-color: red;
+
+$body-bg: #000;
+$body-color: #111;
+
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
