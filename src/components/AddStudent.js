@@ -45,7 +45,7 @@ export default function AddStudent() {
     <>
       <Card>
         <Card.Body>
-          <h2 className="text-center mb-2">Update Profile</h2>
+          <h2 className="text-center mb-2">Add Student</h2>
           {error && <Alert variant="danger">{error}</Alert>}
           <Form onSubmit={handleSubmit}>
             <Form.Group id="email">
@@ -54,23 +54,14 @@ export default function AddStudent() {
                 type="email"
                 ref={emailRef}
                 required
-                defaultValue={currentUser.email}
+                placeholder="Student name"
               />
             </Form.Group>
-            <Form.Group id="password">
-              <Form.Label>Password</Form.Label>
+            <Form.Group id="subject">
+              <Form.Label>Subject</Form.Label>
               <Form.Control
-                type="password"
-                ref={passwordRef}
-                placeholder="Leave blank to keep the same"
-              />
-            </Form.Group>
-            <Form.Group id="password-confirm">
-              <Form.Label>Password Confirmation</Form.Label>
-              <Form.Control
-                type="password"
-                ref={passwordConfirmRef}
-                placeholder="Leave blank to kep the same"
+                type="text"
+                placeholder="Subject"
               />
             </Form.Group>
             <Button color="#70ff5c" disabled={loading} className="w-100" type="submit">

@@ -9,6 +9,7 @@ import PrivateRoute from "./PrivateRoute"
 // import ForgotPassword from "./ForgotPassword"
 import UpdateProfile from "./UpdateProfile"
 import AddStudent from "./AddStudent"
+import Logo from "./logo" 
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       style={{ minHeight: "100vh" }}
     >
       <div className="w-100" style={{ maxWidth: "400px" }}>
+      <Logo />
         <Router>
           <AuthProvider>
             <Switch>
