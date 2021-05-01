@@ -70,7 +70,7 @@ export default function AddStudent() {
               <Form.Control
                 type="password"
                 ref={passwordConfirmRef}
-                placeholder="Leave blank to keep the same"
+                placeholder="Leave blank to kep the same"
               />
             </Form.Group>
             <Button color="#70ff5c" disabled={loading} className="w-100" type="submit">
