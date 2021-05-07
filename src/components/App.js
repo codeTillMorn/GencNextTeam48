@@ -10,6 +10,7 @@ import PrivateRoute from "./PrivateRoute"
 import UpdateProfile from "./UpdateProfile"
 import AddStudent from "./AddStudent"
 import Logo from "./logo" 
+import FileUpload from "./FileUpload"
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
               <PrivateRoute exact path="/" component={Dashboard} />
               <PrivateRoute path="/update-profile" component={UpdateProfile} />
               <PrivateRoute path="/add-student" component={AddStudent} />
+              <PrivateRoute path="/file-upload" component={FileUpload} />
               <Route path="/signup" component={Signup} />
               <Route path="/login" component={Login} />
               {/* <Route path="/forgot-password" component={ForgotPassword} /> */}

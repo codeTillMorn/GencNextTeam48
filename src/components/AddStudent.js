@@ -1,44 +1,15 @@
-import React, { useRef, useState } from "react"
-import { Form, Button, Card, Alert } from "react-bootstrap"
-import { useAuth } from "../contexts/AuthContext"
-import { Link, useHistory } from "react-router-dom"
+import React, {  useState } from "react"
+import { Form, Button, Card, Alert} from "react-bootstrap"
+import { Link} from "react-router-dom"
 
 export default function AddStudent() {
-  const emailRef = useRef()
-  const passwordRef = useRef()
-  const passwordConfirmRef = useRef()
-  const { currentUser, updatePassword, updateEmail } = useAuth()
-  const [error, setError] = useState("")
-  const [loading, setLoading] = useState(false)
-  const history = useHistory()
+
+  const [error] = useState("")
+  const [loading] = useState(false)
+  // const history = useHistory()
 
   function handleSubmit(e) {
-    e.preventDefault()
-    if (passwordRef.current.value !== passwordConfirmRef.current.value) {
-      return setError("Passwords do not match")
-    }
-
-    const promises = []
-    setLoading(true)
-    setError("")
-
-    if (emailRef.current.value !== currentUser.email) {
-      promises.push(updateEmail(emailRef.current.value))
-    }
-    if (passwordRef.current.value) {
-      promises.push(updatePassword(passwordRef.current.value))
-    }
-
-    Promise.all(promises)
-      .then(() => {
-        history.push("/")
-      })
-      .catch(() => {
-        setError("Failed to update account")
-      })
-      .finally(() => {
-        setLoading(false)
-      })
+    // update to database
   }
 
   return (
@@ -51,8 +22,7 @@ export default function AddStudent() {
             <Form.Group id="email">
               <Form.Label>Student Name</Form.Label>
               <Form.Control
-                type="email"
-                ref={emailRef}
+                type="text"
                 required
                 placeholder="Student name"
               />
@@ -64,7 +34,7 @@ export default function AddStudent() {
                 placeholder="Subject"
               />
             </Form.Group>
-            <Button color="#70ff5c" disabled={loading} className="w-100" type="submit">
+            <Button  disabled={loading} className="btn-success w-100" type="submit">
               Update
             </Button>
           </Form>

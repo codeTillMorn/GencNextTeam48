@@ -61,7 +61,7 @@ body {
   line-height: 1.5;
   color: #111;
   text-align: left;
-  background-color: #000;
+  background-color: white;
 }
 
 [tabindex="-1"]:focus:not(:focus-visible) {
@@ -2422,8 +2422,8 @@ fieldset:disabled a.btn {
 
 .btn-primary {
   color: #fff;
-  background-color: #000000;
-  border-color: #000000;
+  background-color: #3acf77;
+  border-color: black;
 }
 .btn-primary:hover {
   color: #fff;
@@ -2482,7 +2482,7 @@ fieldset:disabled a.btn {
 
 .btn-success {
   color: #fff;
-  background-color: #28a745;
+  background-color: #3acf77;
   border-color: #28a745;
 }
 .btn-success:hover {

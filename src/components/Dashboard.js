@@ -24,14 +24,17 @@ export default function Dashboard() {
     <>
       <Card>
         <Card.Body>
-          <h2 className="text-center mb-4 primary">Profile</h2>
+          <h2 className="text-center primary mb-4 ">Profile</h2>
           {error && <Alert variant="danger">{error}</Alert>}
           <strong>Email:</strong> {currentUser.email}
-          <Link to="/update-profile" className="btn btn-primary w-100 mt-3">
-            Update Profile
+          <Link to="/update-profile" className="btn btn-light jatin primary w-100 mt-3">
+           Update Profile
           </Link>
-          <Link to="/add-student" className="btn btn-success w-50 mt-3">
+          <Link to="/add-student" className="btn btn-light w-100 mt-3">
             ADD STUDENT
+          </Link>
+          <Link to="/file-upload" className="btn btn-success w-100 mt-3">
+            NEXT
           </Link>
         </Card.Body>
       </Card>
