@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect} from 'react';
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
 import { Button} from "react-bootstrap"
+import { jsPDF } from "jspdf";
 
 const Dictaphone1 = () => {
 //  const [message, setMessage] = useState('');
@@ -45,8 +46,15 @@ const Dictaphone1 = () => {
    });
   }
    const stopListen = () => {
+    console.log("stopping and saving pdf");
     SpeechRecognition.stopListening();
 
+ };
+ const savePdf = () => {
+
+  var doc = new jsPDF();
+  doc.text(10, 10, finalTranscript);
+  doc.save('transcript.pdf');
  };
 
  return (
@@ -58,10 +66,12 @@ const Dictaphone1 = () => {
          {listening ? 'on' : 'off'}
        </span>
        <div>
-         <Button type="button" variant="outline-secondary" onClick={resetTranscript}>Reset</Button>{"    "}
-         <Button color="#70ff5c" variant="outline-success" onClick={listenContinuously}  >Start</Button>{"      "}
-         <Button type="button" variant="outline-danger" onClick={stopListen}>Stop</Button>{"     "}
+         <Button type="button" variant="outline-secondary" onClick={resetTranscript}>Reset</Button>{"  "}
+         <Button color="#70ff5c" variant="outline-success" onClick={listenContinuously}  >Start</Button>{"  "}
+         <Button type="button" variant="outline-danger" onClick={stopListen}>Stop</Button>{"  "}
        </div>
+       <br/>
+       <Button type="button" variant="outline-primary" onClick={savePdf}>SAVE pdf</Button>{"  "}
      </div>
      {/* <div>
        {message}
